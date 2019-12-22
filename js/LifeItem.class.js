@@ -5,7 +5,6 @@ class LifeItem {
     }
 
     update(count){
-        this.livesCount = count;
             $('.livesCount').empty();
             for(let i = 0; i < count; i++){
                 this.lifeElement.append(this.htmlElem);
