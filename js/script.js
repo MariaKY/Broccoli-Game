@@ -8,8 +8,8 @@
             40: "down"
         };
 
-        let winWidth = $(window).width();
-        let winHeight = $(window).height();
+        const winWidth = $(window).width();
+        const winHeight = $(window).height();
 
         let isPaused = false;
 
