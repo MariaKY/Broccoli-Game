@@ -90,8 +90,8 @@ class ProBro extends Food {
                 break;
         }
 
-    score.updateScore(this.scoreCount);
-    lives.updateLives(this.livesCount);
+    score.update(this.scoreCount);
+    lives.update(this.livesCount);
     }
 
 }

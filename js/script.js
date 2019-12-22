@@ -11,63 +11,23 @@
         let winWidth = $(window).width();
         let winHeight = $(window).height();
 
-
         let isPaused = false;
 
         const foodSize = new Vector2d(80, 80);
         const broSize = new Vector2d(100, 100);
 
-        const Level = function(){
-            this.levelCount = bro.levelCount,
-            this.levelElement = $('.levelCount');
-            this.levelElement.text(this.levelCount);
-        };
-
-        Level.prototype.updateLevel = function(newLevel){
-            this.levelCount = newScore;
-            this.levelElement.text(this.levelCount);
-        };
-
-        const Score = function(){
-            this.scoreCount = bro.scoreCount,
-            this.scoreElement = $('.scoreCount');
-            this.scoreElement.text(this.scoreCount);
-        };
-
-        Score.prototype.updateScore = function(newScore){
-            this.scoreCount = newScore;
-            this.scoreElement.text(this.scoreCount);
-        };
-
-        const Lives = function(){
-            this.livesCount = bro.livesCount,
-            this.lifeElementHTML = '<img class="lifeElement" src="materials/broccoli.png">';
-            this.lifeElement = $(this.lifeElementHTML);
-            for(let i = 0; i < this.livesCount; i++){
-                $('.livesCount').append('<img class="lifeElement" src="materials/broccoli.png">');
-            };
-            
-        };
-
-        Lives.prototype.updateLives = function(newlivesCount){
-            this.livesCount = newlivesCount;
-         /*   if( $('.livesCount').children.length != this.livesCount )
-            { */
-                $('.livesCount').empty();
-                for(let i = 0; i < this.livesCount; i++){
-                    $('.livesCount').append('<img class="lifeElement" src="materials/broccoli.png">');
-                };
-          /*  }; */
-        };
-
-
         let bro = new ProBro(new Vector2d(70, 180), broSize, "broccoli.png");
         bro.present();
 
-        let level = new Level();
-        let score = new Score();
-        let lives = new Lives();
+        const scoreHtml = $('.scoreCount');
+        const levelHtml = $('.levelCount');
+        const lifeHtml = '<img class="lifeElement" src="materials/broccoli.png">';
 
+
+        let level = new AchievementItem(levelHtml);
+        let score = new AchievementItem(scoreHtml);
+        let lives = new LifeItem(lifeHtml);
+        lives.update(bro.livesCount);
 
         let foodArray = [];
 

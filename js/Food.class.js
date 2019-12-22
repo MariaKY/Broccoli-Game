@@ -6,7 +6,8 @@ class Food {
         this.pos = pos;
         this.size = size;
         this.vegName = vegImg.slice(0, -4);
-        this.HtmlItem = $('<img class="food" src="materials/' + vegImg +'">');
+        this.HTMLElement = '<img class="food" src="materials/' + vegImg +'">'
+        this.HtmlItem = $(this.HTMLElement);
     };
 
     present(){
