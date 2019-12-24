@@ -1,11 +1,11 @@
 class LifeItem {
     constructor(lifeHTML){
-        this.lifeElement = $('.livesCount');
+        this.lifeElement = $('.lifeCountContainer');
         this.htmlElem = lifeHTML;
     }
 
     update(count){
-            $('.livesCount').empty();
+            $('.lifeCountContainer').empty();
             for(let i = 0; i < count; i++){
                 this.lifeElement.append(this.htmlElem);
             };
