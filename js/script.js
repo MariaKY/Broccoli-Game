@@ -91,4 +91,15 @@
                     break ;  
             }
 
-        });     
+        });
+        
+        
+        $("#controlsContextMenu" ).click(function() {
+            $('.controlsContextMenu').removeClass("hide");
+            isPaused = true;
+        });
+
+        $("#close").click(function() {
+            $('.controlsContextMenu').addClass("hide");
+            isPaused = false;
+        });

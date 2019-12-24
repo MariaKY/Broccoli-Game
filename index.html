@@ -9,15 +9,48 @@
 
 <body>
     <div class="achivmentBlock">
-        <p>Level:&nbsp;<span class="levelCount">1</span></p>
-        <p>Score:&nbsp;<span class="scoreCount">0</span></p>
-        <p>Lives:<div class="lifeCountContainer"></div></p>
+        <div class="achivments">
+            <p>Level:&nbsp;<span class="levelCount">1</span></p>
+            <p>Score:&nbsp;<span class="scoreCount">0</span></p>
+            <p>Lives:<div class="lifeCountContainer"></div></p>
+        </div>
+        <div class="info">
+            <div class="instructionsContainer">
+                <p class="instructionsContainerLabel">Instructions</p>
+                <div class="instructionsContainerItems">
+                    <div class="instructionsContainerItem" id="controlsContextMenu">
+                        <p>Controls</p>
+                    </div>
+                    <div class="instructionsContainerItem">
+                        <p>Something else</p>
+                    </div>
+                    <div class="instructionsContainerItem">
+                        <p>Something else</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
     </div>
 
-    <div class="gameOverBlock">
+    <div class="controlsContextMenu hide"> 
+        <div class="contextMenu">
+            <img class="controlInstructionsClose" id="close" src="Materials/interface/close.png">
+            <p class="controlInstructionsTitle">Controls Instructions</p> 
+            <div class="controlInstructions">
+                <div><p style="text-align: center">🠨 🠩 🠪 🠫</p></div><div><p>move</p></div>
+                <div><p style="text-align: center">space</p></div><div><p>on/off pause</p></div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="gameOverBlock contextMenu">
         <p class="gameOverText"><b>GAME OVER</b></p>
         <a href=""><div class="playAgainButton"><p>PLAY AGAIN</p></div></a>
     </div>
+
+    
     
 
     <script src="js/jquery.min.js"></script>
