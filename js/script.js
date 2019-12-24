@@ -46,37 +46,35 @@
             foodArray.push(food);
         }
 
-        function gameOver(){
-            clearInterval(broMoving);
-            clearInterval(foodAdding);
-            $('.gameOverBlock').css("display", "flex");
-        }
 
 
 
-        let foodAdding = setInterval(function(){
+
+
+
+        setInterval(function(){
             addNewFood()
         }, NewFoodInterval);
 
-        let broMoving = setInterval(function(){
-                if (isPaused)
-                    return ;
-                bro.move();
-                bro.redraw();
-                for(let j = 0; j < foodArray.length; j++){
-                    if(bro.checkCollision(foodArray[j])) {
-                        bro.eat(foodArray[j]);
-                            
-                        foodArray[j].HtmlItem.remove();
-                        foodArray[j] = null;
-                        foodArray.splice(j, 1);
-
-                        if(bro.livesCount==0)
-                            gameOver();
-                    };
+        setInterval(function(){
+            if (isPaused)
+                return ;
+            bro.move();
+            bro.redraw();
+            for(let j = 0; j < foodArray.length; j++){
+                if(bro.checkCollision(foodArray[j])) {
+                    bro.eat(foodArray[j]);
+                        
+                    // foodArray[j].HtmlItem.fadeOut(150);
+                    foodArray[j].HtmlItem.remove();
+                    foodArray[j] = null;
+                    foodArray.splice(j, 1);
                 };
+            };
+
         }, 15);
         
+
         $("body").keydown(function inputController(event){
             const keyLabel = keyActions[event.keyCode];
 
@@ -88,4 +86,5 @@
                     bro.setDirection(keyLabel);
                     break ;  
             }
+
         });     
