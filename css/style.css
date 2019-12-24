@@ -110,7 +110,7 @@ a {
   /* width: 40%; */
   background-color: green;
   border-radius: 15px;
-  padding: 10px 5px;
+  padding: 10px 15px;
   cursor: pointer;
   transition: all 0.17s linear; }
   .playAgainButton:hover {

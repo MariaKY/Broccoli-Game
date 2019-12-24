@@ -95,11 +95,11 @@
         
         
         $("#controlsContextMenu" ).click(function() {
-            $('.controlsContextMenu').removeClass("hide");
+            $('.instructionContextMenu').removeClass("hide");
             isPaused = true;
         });
 
         $("#close").click(function() {
-            $('.controlsContextMenu').addClass("hide");
+            $('.instructionContextMenu').addClass("hide");
             isPaused = false;
         });
