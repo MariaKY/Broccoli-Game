@@ -37,7 +37,7 @@ class Food {
             top: this.pos.y + 35
         });
         $('body').prepend(scoreShowingElement);
-        setTimeout(() => { $('body').remove(".scoreShowingAnimationBlock")}, 200);
+        setTimeout(() => { $(".scoreShowingAnimationBlock").remove()}, 2000);
      }
 
 }
