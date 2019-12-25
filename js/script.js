@@ -38,7 +38,7 @@
                 return ;
 
             const pos = new Vector2d(Math.floor(Math.random()*(winWidth-80)), 
-                                    Math.floor(Math.random()*(winHeight-80)));
+                                    Math.floor(Math.random()*(winHeight-155))+75);
 
             const vegImg = vegPhotos[Math.floor(Math.random() * vegPhotos.length)];
             const food = new Food(pos, foodSize, vegImg);

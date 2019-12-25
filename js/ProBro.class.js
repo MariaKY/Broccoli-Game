@@ -14,16 +14,16 @@ class ProBro extends Food {
     move() {
         this.pos.add(this.curDirection);
 
-        if (this.pos.x < -99 ) {
-            this.pos.x = winWidth + 99;
-        } else if (this.pos.x > winWidth + 99){
+        if (this.pos.x < - 99 ) {
+            this.pos.x = winWidth + 5;
+        } else if (this.pos.x > winWidth + 5){
             this.pos.x = -99;
         };
 
-        if (this.pos.y < -99 ) {
-            this.pos.y = winHeight + 49;
-        } else if (this.pos.y > winHeight + 49){
-            this.pos.y = -99;
+        if (this.pos.y < - 5 ) {
+            this.pos.y = winHeight + 5;
+        } else if (this.pos.y > winHeight + 5){
+            this.pos.y = -5;
         };
     };
 
