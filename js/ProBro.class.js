@@ -54,37 +54,26 @@ class ProBro extends Food {
     eat(food){
         switch(food.vegName) {
             case 'carrot':
-                this.scoreCount += 1;
-                break;
             case 'corn':
-                this.scoreCount += 2;
-                break;
-            case 'papper':
-                this.scoreCount += 3;
-                break;
-            case 'spicyPepper':
-                this.livesCount--;
-                break;
-            case 'tomato':
-                this.scoreCount += 5;
-                break;
-            case 'cabbage':
-                this.scoreCount += 6;
-                break;
-            case 'melon':
-                this.scoreCount += 7;
-                break;
-            case 'onion':
-                this.livesCount--;
+            case 'watermalon':
+                food.vegScoreValue = +1;
+                this.scoreCount += food.vegScoreValue;
                 break;
             case 'potato':
-                this.scoreCount += 9;
+            case 'papper':
+            case 'cabbage':
+                food.vegScoreValue = +5;
+                this.scoreCount += food.vegScoreValue;
                 break;
+            case 'tomato':
+            case 'melon':
             case 'squash':
-                this.scoreCount += 10;
+                food.vegScoreValue = +10;
+                this.scoreCount += food.vegScoreValue;
                 break;
-            case 'watermalon':
-                this.scoreCount += 11;
+            case 'onion':
+            case 'spicyPepper':
+                this.livesCount--;
                 break;
             default:
                 break;

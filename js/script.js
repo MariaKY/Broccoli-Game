@@ -48,7 +48,7 @@
 
 
         function gameOver(){
-            clearInterval(broMoving);
+            clearInterval(MainLoop);
             clearInterval(foodAdding);
             $('.gameOverBlock').css("display", "flex");
         }
@@ -58,21 +58,21 @@
             addNewFood()
         }, NewFoodInterval);
 
-        let broMoving = setInterval(function(){
+        let MainLoop = setInterval(function(){
             if (isPaused)
                 return ;
+            if(bro.livesCount<=0)
+                gameOver();
             bro.move();
             bro.redraw();
             for(let j = 0; j < foodArray.length; j++){
                 if(bro.checkCollision(foodArray[j])) {
                     bro.eat(foodArray[j]);
 
-                    // foodArray[j].HtmlItem.fadeOut(150);
                     foodArray[j].HtmlItem.remove();
+                    foodArray[j].scoreShowingAnimation(foodArray[j].vegScoreValue);
                     foodArray[j] = null;
                     foodArray.splice(j, 1);
-                    if(bro.livesCount==0)
-                        gameOver();
                 };
             };
 
@@ -90,7 +90,6 @@
                     bro.setDirection(keyLabel);
                     break ;  
             }
-
         });
         
         

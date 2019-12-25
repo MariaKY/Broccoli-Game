@@ -6,6 +6,7 @@ class Food {
         this.pos = pos;
         this.size = size;
         this.vegName = vegImg.slice(0, -4);
+        this.vegScoreValue = 0;
         this.HTMLElement = '<img class="food" src="materials/' + vegImg +'">'
         this.HtmlItem = $(this.HTMLElement);
     };
@@ -23,10 +24,20 @@ class Food {
     };
 
     checkCollision(other) {
-        return (this.pos.x > other.pos.x - (other.size.x / 2) 
-        && this.pos.x < other.pos.x + (other.size.x / 2)
-        && this.pos.y > other.pos.y - (other.size.y / 2)
-        && this.pos.y < other.pos.y + (other.size.y / 2))
+        return (this.pos.x > other.pos.x - (other.size.x - 15) //10 это число навскидку для еффекта пересечения протагониста и антагониста
+        && this.pos.x < other.pos.x + (other.size.x - 15) 
+        && this.pos.y > other.pos.y - (other.size.y - 15)
+        && this.pos.y < other.pos.y + (other.size.y - 15))
     }
+
+      scoreShowingAnimation(scoreValue){
+        let scoreShowingElement = $('<div class="scoreShowingAnimationBlock"><span>+' + scoreValue + '</span></div>');
+        scoreShowingElement.css({
+            left: this.pos.x + 35,
+            top: this.pos.y + 35
+        });
+        $('body').prepend(scoreShowingElement);
+        setTimeout(() => { $('body').remove(".scoreShowingAnimationBlock")}, 200);
+     }
 
 }
