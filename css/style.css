@@ -151,6 +151,10 @@ a {
     .controlInstructionsClose:hover {
       transform: rotate(90deg) scale(0.9); }
 
+.arrows-control-img {
+  width: 40px;
+  margin: 0 auto; }
+
 .scoreShowingAnimationBlock {
   position: absolute;
   opacity: 0;
